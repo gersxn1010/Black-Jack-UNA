@@ -1,19 +1,15 @@
-
 #pragma once
 #include <iostream>
-#include "Mazo.h"
 #include "Participante.h"
-
+#include "Mazo.h"
 using namespace std;
 
-class Crupier {
+class Crupier : public Participante {
 private:
     Mazo mazo;
-
 public:
     Crupier(int numeroMazos = 6);
-
-    bool quiereCarta();
+    bool quiereCarta() override;
     void repartirCarta(Participante& destino);
     void repartirManoInicial(Participante& destino);
     void reiniciarSiHaceFalta();

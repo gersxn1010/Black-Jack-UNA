@@ -4,20 +4,11 @@
 using namespace std;
 
 class Ficha {
-
 private:
-
-	int valor;
-
-	string colorFicha;
-
+    int valor;
+    string colorFicha;
 public:
-
-	Ficha(int valor, string colorFicha);
-
-	int getValor();
-
-	string getColorFicha();
-
-
+    Ficha(int valor, string colorFicha);
+    int getValor() const;
+    string getColorFicha() const;
 };

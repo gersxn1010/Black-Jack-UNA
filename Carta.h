@@ -1,19 +1,18 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
-
-class Carta{
+class Carta {
 private:
-	string tipo;
-	int valor;
-	int numeroCarta;
-
+    string tipo;
+    int valor;
+    int numeroCarta;
 public:
-	Carta(string tipo, int valor, int numeroCarta);
-	string getTipo();
-	int getValor();
-	int getNumeroCarta();
-	bool esAs();
-	string MostrarCarta();
+    Carta(string tipo, int numeroCarta);
+    string getTipo();
+    int getValor();
+    int getNumeroCarta();
+    bool esAs();
+    string mostrarCarta();
 };
