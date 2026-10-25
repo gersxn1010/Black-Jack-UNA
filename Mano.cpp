@@ -4,6 +4,7 @@
 Mano::Mano() {
 }
 
+void Mano::agregarCarta(const Carta& c) { // Método para agregar una carta a la mano
 void Mano::agregarCarta(const Carta& c) { // Método para agregar una carta a la
 	cartas.push_back(c);
 }
