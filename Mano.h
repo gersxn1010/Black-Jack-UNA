@@ -13,7 +13,7 @@ private:
 
 public:
 
-	Mano();
+	Mano();<
 
 	void agregarCarta(const Carta& c);
 
