@@ -6,30 +6,30 @@
 
 using namespace std;
 
-class Participante {
+class Participante{
 
 protected:
 
-	string nombre;
+string nombre;
 
-	vector<Mano>manos;
+vector<Mano>manos;
 
-	friend class Juego;
+friend class Juego;
 
 public:
 
-	Participante(string nombre);
+Participante(string nombre);
 
-	virtual ~Participante();
+virtual ~Participante();
 
-	virtual bool quiereCarta();
+virtual bool quiereCarta();
 
-	void recibirCarta(const Carta& c);
+void recibirCarta(const Carta& c);
 
-	const Mano& getMano() const;
+const Mano& getMano() const;
 
-	void limpiarMano();
+void limpiarMano();
 
-	string getNombre() const;
+string getNombre() const;
 
 };
