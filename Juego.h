@@ -1,4 +1,4 @@
-#pragma once
+#pragma once //Alonso
 #include <iostream>
 #include <vector>
 #include "Jugador.h"
