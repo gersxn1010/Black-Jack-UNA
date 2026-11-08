@@ -1,35 +1,33 @@
-
 #include "Casa.h"
-#include "Ficha.h"
 
+Casa::Casa() {
+}
 
-static void entregarFichas(Jugador& j, int monto) {
- 
-    const int valores[4] = { 100, 25, 5, 1 };
-    const string colores[4] = { "negro", "verde", "rojo", "blanco" };
+bool Casa::EsApuestaValida(int monto) {
 
-    for (int i = 0; i < 4; i++) {
-        while (monto >= valores[i]) {
-            j.agregarFicha(Ficha(valores[i], colores[i]));
-            monto -= valores[i];
-        }
+    return monto >= apuestaMinima &&
+        monto <= apuestaMaxima &&
+        monto <= dineroBanca;
+}
+
+bool Casa::intentarPagarPremio(int monto) {
+
+    if (monto <= 0 || monto > dineroBanca) {
+        return false;
+    }
+
+    dineroBanca -= monto;
+    return true;
+}
+
+void Casa::recibirApuestaPerdida(int monto) {
+
+    if (monto > 0) {
+        dineroBanca += monto;
     }
 }
 
-Casa::Casa(int dineroMesa) {
-    this->dineroMesa = dineroMesa;
-}
+int Casa::getDineroBanca() {
 
-int Casa::getDineroMesa() {
-    return dineroMesa;
-}
-void Casa::pagarApuesta(Jugador& j) {
-    int apuesta = j.getApuestaActual();
-    dineroMesa -= apuesta;                 
-    entregarFichas(j, apuesta * 2);        
-}
-
-
-void Casa::cobrarApuesta(Jugador& j) {
-    dineroMesa += j.getApuestaActual();
+    return dineroBanca;
 }
