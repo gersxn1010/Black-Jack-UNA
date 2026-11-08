@@ -26,3 +26,11 @@ Carta Mazo::sacarCarta() {
     return carta;
 }
 
+bool Mazo::estaVacio() {
+    return cartas.empty();
+}
+
+int Mazo::cartasRestantes() {
+    return (int)cartas.size();
+}
+
