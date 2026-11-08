@@ -1,10 +1,10 @@
 #include "Mano.h"
-                                                                                                                
+
 void Mano::agregarCarta(const Carta& c) {
     cartas.push_back(c);
 }
 
-int Mano::calcularValor() const {
+int Mano::calcularValor() const { 
     int valor = 0;
     int ases = 0;
     for (const Carta& c : cartas) {
