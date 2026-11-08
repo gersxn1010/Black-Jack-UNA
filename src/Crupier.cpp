@@ -1,37 +1,31 @@
-#include "Crupier.h"
-#include "Mano.h"
-#include "Participante.h"
-#include "Mazo.h"
-#include "Carta.h"
 
-Crupier::Crupier(int numeroMazos)
-    : Participante("Crupier"), mazo(numeroMazos) {
-    // se rebaraja cuando queda menos del 25% de las cartas
-    limiteRebarajar = (52 * numeroMazos) / 4;
+#include "Crupier.h"
+
+Crupier::Crupier(Casa& casa) : Participante("Crupier"), casa(casa) {
 }
 
 bool Crupier::quiereCarta() {
-    return mano.calcularValor() < 17;   // el crupier pide hasta llegar a 17
+    return getMano().calcularValor() < 17;
 }
 
-void Crupier::repartirCarta(Participante& destino) {
-    if (mazo.estaVacio()) {             // seguridad por si se acaba a mitad de ronda
-        mazo.reiniciar();
+void Crupier::repartirA(Participante& p, Mazo& mazo) {
+    if (mazo.estaVacio()) {
+        return;
     }
-    destino.recibirCarta(mazo.sacarCarta());
+    p.recibirCarta(mazo.sacarCarta());
 }
 
-void Crupier::repartirManoInicial(Participante& destino) {
-    repartirCarta(destino);
-    repartirCarta(destino);
-}
-
-void Crupier::reiniciarSiHaceFalta() {
-    if (mazo.cartasRestantes() < limiteRebarajar) {
-        mazo.reiniciar();
+bool Crupier::aceptarApuesta(Jugador& j, int monto) {
+    if (!casa.EsApuestaValida(monto)) {
+        return false;
     }
+    return j.apostar(monto);
 }
 
-int Crupier::cartasRestantes() {
-    return mazo.cartasRestantes();
+void Crupier::revelarCarta() {
+    cout << getNombre() << ": " << getMano().aTexto(false) << endl;
+}
+
+void Crupier::recogerCartas(Participante& p) {
+    p.limpiarMano();
 }
