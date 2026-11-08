@@ -429,3 +429,5 @@ FodyWeavers.xsd
 /Jugador.h
 /Jugador.h
 /.gitignore
+/Casa.cpp
+/Crupier.cpp
