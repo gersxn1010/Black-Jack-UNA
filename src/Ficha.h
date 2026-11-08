@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <string>
+
 using namespace std;
 
 class Ficha {
@@ -18,6 +18,5 @@ public:
 	int getValor();
 
 	string getColorFicha();
-
 
 };
