@@ -1,50 +1,69 @@
 #include "Mano.h"
-#include "Carta.h"
-
-Mano::Mano() {
-}
-
-void Mano::agregarCarta(const Carta& c) { // Método para agregar una carta a la mano
-void Mano::agregarCarta(const Carta& c) { // Método para agregar una carta a la
-	cartas.push_back(c);
+                                                                                                                
+void Mano::agregarCarta(const Carta& c) {
+    cartas.push_back(c);
 }
 
 int Mano::calcularValor() const {
-	int valor = 0;
-	int cantidadAses = 0;
-	for (const Carta& carta : cartas) {
-		valor += carta.getValor();
-		if (carta.getValor() == 11) { // As
-			cantidadAses++; // Contar la cantidad de Ases
-		}
-	}
-	while (valor > 21 && cantidadAses > 0) {
-		valor -= 10; // Contar el As como 1 en lugar de 11
-		cantidadAses--;
-	}
-	return valor;
+    int valor = 0;
+    int ases = 0;
+    for (const Carta& c : cartas) {
+        valor += c.getValor();
+
+        if (c.esAs()) {
+            ases++;
+        }
+        //El As puede valer 1 o 11 en blackjack.s
+        //Se reduce su valor en 10 si nos pasamos de 21.
+        while (valor > 21 && ases > 0) {
+            valor -= 10;
+            ases--;
+        }
+    }
+    return valor;
 }
 
-bool Mano::esBlackjack() const {
-	return cartas.size() == 2 && calcularValor() == 21;// Verificar si hay exactamente dos cartas y su valor es 21
+bool Mano::esBlackJack() const {
+    return cartas.size() == 2 && calcularValor() == 21;
+
 }
 
 bool Mano::sePasa() const {
-	return calcularValor() > 21;// Verificar si el valor de la mano supera 21
-}
-
-void Mano::limpiar() {
-	cartas.clear();
+    return calcularValor() > 21;
 }
 
 int Mano::cantidadCartas() const {
-	return cartas.size();
+    return static_cast<int>(cartas.size());
 }
 
-void Mano::mostrar() const {
-	for (const Carta& carta : cartas) {
-		carta.mostrar();
-	}
-
-	cout << "Valor actual: " << calcularValor() << endl;
+void Mano::limpiar() {
+    cartas.clear();
+    valorApuesta = 0;
 }
+
+int Mano::getValorApuesta() const {
+    return valorApuesta;
+}
+
+string Mano::aTexto(bool ocultarPrimera) const {
+    string resultado;
+
+    for (int i = 0; i < cantidadCartas(); i++) {
+        if (i == 0 && ocultarPrimera) {
+            resultado += "[Carta oculta]";
+        }
+        else {
+            //Ajustar segun el metodo que tenga la clase carta
+            resultado += cartas[i].mostrarCarta();
+        }
+
+
+        if (i < cantidadCartas() - 1) {
+            resultado += ",  ";
+        }
+
+    }
+    return resultado;
+}
+
+
