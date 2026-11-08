@@ -4,15 +4,27 @@
 using namespace std;
 
 class Carta {
+
 private:
-    string tipo;
-    int valor;
-    int numeroCarta;
+
+	string tipo;
+
+	int valor;
+
+	int numeroCarta;
+
 public:
-    Carta(string tipo, int numeroCarta);
-    string getTipo();
-    int getValor();
-    int getNumeroCarta();
-    bool esAs();
-    string mostrarCarta();
+
+	Carta(string tipo, int numeroCarta);
+
+	string getTipo() const;
+
+	int getValor() const;
+
+	int getNumeroCarta() const;
+
+	bool esAs() const;
+
+	string mostrarCarta() const;
+
 };
