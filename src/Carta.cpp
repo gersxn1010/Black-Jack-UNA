@@ -15,3 +15,18 @@ Carta::Carta(string tipo, int numeroCarta) {
     }
 }
 
+string Carta::getTipo() const {
+    return tipo;
+}
+
+int Carta::getValor() const {
+    return valor;
+}
+
+int Carta::getNumeroCarta() const {
+    return numeroCarta;
+}
+
+bool Carta::esAs() const {
+    return numeroCarta == 1;
+}
