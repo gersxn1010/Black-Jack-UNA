@@ -1,21 +1,30 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <random>
 #include "Carta.h"
+
 using namespace std;
 
 class Mazo {
+
 private:
-    vector<Carta> cartas;
-    int numeroMazos;
-    mt19937 generador;
-    void llenar();
+
+    void crearBarajaCompleta();
+
+
+
 public:
-    Mazo(int numeroMazos = 6);
-    int cartasRestantes();
-    bool estaVacio();
-    void barajar();
+
+    Mazo();
+
+    vector<Carta> cartas;
+
     Carta sacarCarta();
-    void reiniciar();
+
+    bool estaVacio();
+
+    int cartasRestantes();
+
+    bool necesitaBarajar();
+
 };

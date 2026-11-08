@@ -1,14 +1,29 @@
 #pragma once
 #include <iostream>
-#include "Jugador.h"
+#include <string>
+
 using namespace std;
 
 class Casa {
+
 private:
-    int dineroMesa;
+
+	string nombre = "Casa";
+	int dineroBanca = 2000;
+	int apuestaMinima = 10;
+	int apuestaMaxima = 500;
+
 public:
-    Casa(int dineroMesa);
-    int getDineroMesa();
-    void pagarApuesta(Jugador& j);
-    void cobrarApuesta(Jugador& j);
+
+	Casa();
+
+	bool EsApuestaValida(int monto);
+
+	bool intentarPagarPremio(int monto);
+
+	void recibirApuestaPerdida(int monto);
+
+	int getDineroBanca();
+
+
 };
