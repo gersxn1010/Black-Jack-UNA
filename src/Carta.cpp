@@ -30,3 +30,26 @@ int Carta::getNumeroCarta() const {
 bool Carta::esAs() const {
     return numeroCarta == 1;
 }
+
+string Carta::mostrarCarta() const {
+    string nombre;
+    switch (numeroCarta) {
+    case 1:
+        nombre = "As";
+        break;
+    case 11:
+        nombre = "J";
+        break;
+    case 12:
+        nombre = "Q";
+        break;
+    case 13:
+        nombre = "K";
+        break;
+    default:
+        nombre = to_string(numeroCarta);
+        break;
+    }
+    return nombre + " de " + tipo;
+}
+
