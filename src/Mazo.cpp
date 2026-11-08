@@ -11,3 +11,18 @@ void Mazo::crearBarajaCompleta() {
         }
     }
 }
+Mazo::Mazo() {
+    crearBarajaCompleta();
+}
+
+Carta Mazo::sacarCarta() {
+
+    if (cartas.empty()) {
+        crearBarajaCompleta();
+    }
+
+    Carta carta = cartas.back();
+    cartas.pop_back();
+    return carta;
+}
+
