@@ -34,3 +34,6 @@ int Mazo::cartasRestantes() {
     return (int)cartas.size();
 }
 
+bool Mazo::necesitaBarajar() {
+    return cartas.empty();
+}
