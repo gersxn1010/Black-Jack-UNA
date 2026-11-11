@@ -2,6 +2,12 @@
 
 Group 3 | This repository is about a university programming 1 final project
 
+
+<p align="center">
+  <img src="./docs/Gemini_Generated_Image_gtrzbdgtrzbdgtrz.jpg" alt="Blackjack" width="600">
+</p>
+
+
 ## Descripción
 Este proyecto consiste en la implementación del juego Blackjack en lenguaje C++ para consola. El objetivo principal es recrear una partida de blackjack con reglas básicas, apuestas, turno del jugador, turno del crupier y lógica de pago según el resultado de cada ronda.
 
