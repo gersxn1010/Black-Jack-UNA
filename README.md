@@ -58,12 +58,7 @@ g++ -std=c++17 -O2 .\src\*.cpp -o .\BlackJack-UNA.exe
 ```powershell
 .\BlackJack-UNA.exe
 ```
-## Alternativa con compilación más compatible
-También puede funcionar así si tu entorno requiere una versión más explícita:
 
-```powershell
-g++ -std=c++17 -I .\src .\src\*.cpp -o .\BlackJack-UNA.exe
-```
 
 ## Estructura del repositorio
 ```text
