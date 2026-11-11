@@ -17,7 +17,7 @@ El juego está diseñado para ejecutarse en la terminal, y la lógica principal 
 ### Grupo 3:
 - alonsx-02
 - Gerson Andres Gómez García
-- rxnd49
+- Brxnd49
 - Kendal Obando
 - wendervillegasgarcia-boop
 
