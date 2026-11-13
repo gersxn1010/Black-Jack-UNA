@@ -23,6 +23,7 @@ Desde la raíz del proyecto, abre una terminal de desarrollador de Visual Studio
 ```bat
 cd /d "d:\Descargas\Black\Black-Jack-UNA"
 cl /EHsc /I src src\Carta.cpp src\Casa.cpp src\Crupier.cpp src\Ficha.cpp src\Juego.cpp src\Jugador.cpp src\main.cpp src\Mazo.cpp src\Mano.cpp src\Participante.cpp /Fe:BlackJack-UNA.exe
+```
 
 
 
@@ -31,9 +32,8 @@ cl /EHsc /I src src\Carta.cpp src\Casa.cpp src\Crupier.cpp src\Ficha.cpp src\Jue
 
 
 
-Contenido para `guia-visual-studio.md`:
 
-```md
+
 # Guía de compilación en Visual Studio
 
 ## 1. Descripción
